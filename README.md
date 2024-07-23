@@ -26,7 +26,7 @@ Se recomienda editar el archivo `hosts` en Windows y agregar las siguientes lín
   127.0.0.1 www.elrockdetuvida.com                  # Necesario para jumpear el server de ERDTV
 ```
 
-Esto es necesario para que el juego sepa que este servidor local que ejecutamos en XAMPP es el que espera que esté activo.
+Esto es necesario para que el juego sepa que este servidor l 	ocal que ejecutamos en XAMPP es el que espera que esté activo.
 
 El pispeador (accessible desde `www.elrockdetuvida.com/game/pispeo`) sirve para entender las peticiones que hace el juego. Solo registra peticiones POST. No sé si el juego hace peticiones GET. Solo sirve para entender los endpoints que necesita el server para después tratar de agregar datos que no hagan romper al juego.
 
@@ -42,5 +42,5 @@ CREATE TABLE `peticiones` (
 
 ## Pendiente resolver:
 - Buscar pasar el inicio de sesión
-- Buscar los posibles endpoints del juego y... documentarlos?
+- Buscar los posibles endpoints del juego y... documentarlos? [Temporalmente hecho en [REQUESTS.md](REQUESTS.md)]
 - Tener el juego en un estado casi jugable (al ponerle success al servidor como respuesta, crashea porque no tiene muchos datos que espera obtener para mostrar en pantalla).
