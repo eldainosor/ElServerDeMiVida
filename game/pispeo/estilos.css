@@ -1,0 +1,38 @@
+body {
+	/* fondo de transparenttextures.com */
+	background-color: #0e0014;
+	background-image: url("fake-brick.png");
+	color: white;
+	font-family: 'Bahnschrift', sans-serif;
+}
+
+.subtexto {
+	color: #eaeaea;
+}
+
+#formenvio {
+	display: inline-grid;
+}
+
+.info-msg {
+	background-color: #46f29f;
+	color: #000;
+	padding: 1em;
+}
+
+.info-msg-error {
+	background-color: #f24646;
+	color: #000;
+	padding: 1em;
+}
+
+.info-msg p strong, .info-msg-error p strong {
+	text-transform: uppercase;
+	margin-right: 0.5em;
+}
+
+.txtComentario {
+	background-color: rgba(255,255,255,0.12);
+	padding: 0.25em;
+	margin-top: 0.25em;
+}

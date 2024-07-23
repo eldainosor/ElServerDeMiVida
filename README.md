@@ -28,7 +28,19 @@ Se recomienda editar el archivo `hosts` en Windows y agregar las siguientes lín
 
 Esto es necesario para que el juego sepa que este servidor local que ejecutamos en XAMPP es el que espera que esté activo.
 
+El pispeador (accessible desde `www.elrockdetuvida.com/game/pispeo`) sirve para entender las peticiones que hace el juego. Solo registra peticiones POST. No sé si el juego hace peticiones GET. Solo sirve para entender los endpoints que necesita el server para después tratar de agregar datos que no hagan romper al juego.
+
+Para hacer funcionar el pispeador, hay que crear una base de datos dentro de XAMPP. Para eso, hay que ejecutar en mysql:
+```sql
+CREATE DATABASE erdtv_log_requests;
+USE erdtv_log_requests;
+CREATE TABLE `peticiones` (
+  `timestamp` bigint(20) NOT NULL,
+  `outputdata` longtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+```
+
 ## Pendiente resolver:
-- Buscas pasar el inicio de sesión
+- Buscar pasar el inicio de sesión
 - Buscar los posibles endpoints del juego y... documentarlos?
 - Tener el juego en un estado casi jugable (al ponerle success al servidor como respuesta, crashea porque no tiene muchos datos que espera obtener para mostrar en pantalla).
