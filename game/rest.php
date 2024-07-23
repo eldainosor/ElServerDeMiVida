@@ -6,13 +6,10 @@
 		$conexionDatos = new mysqli('localhost', 'root', '', 'erdtv_log_requests');
 
 		// Vamos filtrando la data que meta en la peticion POST
-		//$output = "{";
-		$output = "{";
+		$output = "";
 		foreach ($_POST as $key => $value) {
-		//	$output = '"' . $output . '"' . $key . ':' . $value . ',';
 			$output = $key . ": " . $value;
 		}
-		//$output = $output . "}";
 		$tmstmp = time();
 		// Vamos a guardar las peticiones que haga el juego en nuestra db
 		$gameRequestRequest = "INSERT INTO `peticiones`(`timestamp`,`outputdata`) VALUES ('$tmstmp','$output');";
@@ -23,7 +20,7 @@
 		if (array_key_exists('packet', $_POST)) {
 			$peticionERDTV = json_decode($_POST['packet'], true);
 			if (array_key_exists('content', $peticionERDTV)) {
-				// WIP manipular datos de content
+				// WIP manipular datos de content en caso de que exista
 			}
 			if ($peticionERDTV['type'] === "getauthorizedsongs" || ($peticionERDTV['type'] === "getallsongs")) {
 				// we're moving

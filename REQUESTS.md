@@ -4,11 +4,10 @@ Tambien conocido como endpoints posibles con info que puede llegar a necesitar e
 
 Estos endpoints siguen llamado a la misma dirección (`www.elrockdetuvida.com/game/rest.php`) pero la respuesta es de distinto tipo. Esto define 100% el contenido que devuelven. El agente que usa el juego es GameHTTP (por alguna razón)
 
-El formato siempre envía el juego es el siguiente:
-
+El juego hace una peticion POST con el nombre de variable `packet` y con un dato en formato JSON similar a esto:
 ```  
-"packet:{
-    type: [tipo-de-respuesta],
+{
+    type: [tipo-de-peticion],
     sessionid: [id-sesion],
     content: [dato-que-pasa-al-servidor]
 }
@@ -177,12 +176,7 @@ Le manda una respuesta al juego con la respuesta a la hora de guardar el puntaje
 {
     "result": "[tipo-de-mensaje]",
     "content": {
-    	"adverts":[
-    		"hash":"[hash-publicidad]",
-			"server":"[url-server-publicidad]",
-			"path":"[url-imagen-server?]",
-			"place":"[enlace-info-publicidad?]",
-    	]
+    	"hash":"[hash-puntaje?????]",
     }
 }  
 ```
